@@ -51,7 +51,7 @@ function createProdHtmlPlugin(cfg) {
         title: e.title,
         filename: `./${e.name}.html`,
         template: path.resolve(__dirname, '../index.html'),
-        chunks: [`${e.name}`, 'vendor.min.js'],
+        chunks: [`${e.name}`, 'vendor'],
         inject: 'true',
         chunksSortMode: 'dependency',
         minify: {
