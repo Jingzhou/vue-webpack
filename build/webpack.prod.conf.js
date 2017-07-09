@@ -51,9 +51,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     ...new htmlHelper.createProdHtmlPlugin(config.html), // 新增
     // split vendor js into its own file
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   filename: 'vender.min.js',
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: utils.assetsPath('js/vendor.min.js'),
       // minChunks: function (module, count) {
       //   // any required modules inside node_modules are extracted to vendor
       //   return (
@@ -64,7 +64,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       //     ) === 0
       //   )
       // }
-    // }),
+
+    }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
     // new webpack.optimize.CommonsChunkPlugin({
